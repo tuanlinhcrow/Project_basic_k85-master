@@ -14,7 +14,7 @@
 //------------FRONTEND----------------
 
 //index
-Route::get('','frontend\HomeController@getIndex');
+Route::get('index','frontend\HomeController@getIndex');
 Route::get('about','frontend\HomeController@getAbout' );
 Route::get('contact', 'frontend\HomeController@getContact');
 

@@ -13,9 +13,9 @@ class ProductController extends Controller
         if ($r->start!='') {
             $data['categories']=Category::all();
             $data['product']=product::where('img','<>','no-img.jpg')
-            ->whereBetween('price',[$r->start,$r->end])->paginate(1);
+            ->whereBetween('price',[$r->start,$r->end])->paginate(3);
         } else {
-            $data['product']=product::where('img','<>','no-img.jpg')->paginate(1);
+            $data['product']=product::where('img','<>','no-img.jpg')->paginate(3);
             $data['categories']=Category::all();
         }
 
@@ -26,6 +26,8 @@ class ProductController extends Controller
         $arr = explode("-",$prdSlug);
         $id = array_pop($arr);
         $data['prd']= product::find($id);
+        $data['prdNew']= product::where('img','<>','no-img.jpg')
+        ->orderBy('id','desc')->take(4)->get();
         return view('frontend.product.detail',$data);
     }
 

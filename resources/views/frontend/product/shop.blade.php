@@ -13,7 +13,7 @@
 
                                 <div class="cart">
                                     <p>
-                                        <span class="addtocart"><a href="cart.html"><i
+                                        <span class="addtocart"><a href="/{{$row->slug}}-{{$row->id}}.html"><i
                                                     class="icon-shopping-cart"></i></a></span>
                                         <span><a href="/{{$row->slug}}-{{$row->id}}.html"><i class="icon-eye"></i></a></span>
 
